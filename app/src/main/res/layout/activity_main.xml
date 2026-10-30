@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Cabecera -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Ecualizador"
+                android:textColor="@color/ink"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.16"
+                android:text="AUDÍFONOS · BATERÍA · SONIDO"
+                android:textColor="@color/muted"
+                android:textSize="11sp" />
+
+            <!-- Audífonos -->
+            <TextView
+                style="@style/Label"
+                android:text="AUDÍFONOS" />
+
+            <LinearLayout
+                android:id="@+id/devices"
+                style="@style/Card" />
+
+            <!-- Reproduciendo -->
+            <TextView
+                style="@style/Label"
+                android:text="REPRODUCIENDO" />
+
+            <LinearLayout style="@style/Card">
+
+                <LinearLayout
+                    android:id="@+id/media"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/art"
+                            android:layout_width="76dp"
+                            android:layout_height="76dp"
+                            android:background="@drawable/bg_art"
+                            android:importantForAccessibility="no"
+                            android:scaleType="centerCrop" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/source"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:fontFamily="monospace"
+                                android:letterSpacing="0.1"
+                                android:maxLines="1"
+                                android:textColor="@color/accent"
+                                android:textSize="10.5sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:textColor="@color/ink"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/artist"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:textColor="@color/muted"
+                                android:textSize="13.5sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/progress"
+                        style="@style/Seek"
+                        android:layout_marginTop="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/position"
+                            style="@style/SetValue"
+                            android:layout_width="0dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/duration"
+                            style="@style/SetValue" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/prev"
+                            style="@style/Transport"
+                            android:contentDescription="Anterior"
+                            android:src="@drawable/ic_prev" />
+
+                        <ImageView
+                            android:id="@+id/play"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginHorizontal="22dp"
+                            android:background="@drawable/bg_play"
+                            android:clickable="true"
+                            android:contentDescription="Reproducir o pausar"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:src="@drawable/ic_play"
+                            android:tint="@color/on_accent" />
+
+                        <ImageView
+                            android:id="@+id/next"
+                            style="@style/Transport"
+                            android:contentDescription="Siguiente"
+                            android:src="@drawable/ic_next" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/mediaEmpty"
+                    style="@style/Hint" />
+
+                <TextView
+                    android:id="@+id/mediaAccess"
+                    style="@style/Btn"
+                    android:text="Dar acceso a notificaciones" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="14dp"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_volume"
+                        android:tint="@color/muted" />
+
+                    <TextView
+                        style="@style/SetName"
+                        android:text="Volumen" />
+
+                    <TextView
+                        android:id="@+id/volumeValue"
+                        style="@style/SetValue" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/volume"
+                    style="@style/Seek" />
+            </LinearLayout>
+
+            <!-- Ecualizador -->
+            <TextView
+                style="@style/Label"
+                android:text="ECUALIZADOR" />
+
+            <LinearLayout style="@style/Card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/SetName"
+                        android:text="Ecualizador"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <Switch
+                        android:id="@+id/eqSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/eqStatus"
+                    style="@style/Hint"
+                    android:layout_marginTop="2dp" />
+
+                <LinearLayout
+                    android:id="@+id/eqBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/presets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" />
+                    </HorizontalScrollView>
+
+                    <com.davidagb.ecualizador.EqView
+                        android:id="@+id/eqView"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:layout_marginTop="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/SetName"
+                            android:text="Refuerzo de graves" />
+
+                        <TextView
+                            android:id="@+id/bassValue"
+                            style="@style/SetValue" />
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/bass"
+                        style="@style/Seek" />
+
+                    <TextView
+                        android:id="@+id/reset"
+                        style="@style/Btn"
+                        android:text="Restablecer" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

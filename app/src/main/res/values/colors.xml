@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#E8EEEC</color>
+    <color name="surface">#F8FBFA</color>
+    <color name="ink">#10221F</color>
+    <color name="muted">#566B67</color>
+    <color name="line">#C9D7D3</color>
+    <color name="accent">#0B7A6E</color>
+    <color name="accent_soft">#D2EEE9</color>
+    <color name="on_accent">#F8FBFA</color>
+    <color name="danger">#B4232F</color>
+    <color name="icon_bg">#10221F</color>
+</resources>
