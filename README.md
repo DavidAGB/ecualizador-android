@@ -23,7 +23,7 @@ Written in Kotlin with the Android SDK only, no external libraries.
 | Language | Kotlin 2.0 |
 | Android | minimum 9 (API 28), built for Android 15 (API 35) |
 | Audio | the platform `Equalizer` and `BassBoost` effects |
-| UI | native views built in code, with custom views for the curve and the battery |
+| UI | native views with XML layouts, plus custom views for the curve and the battery |
 | Dependencies | none beyond the Android SDK |
 | Size | about 1,200 lines in 7 files |
 
